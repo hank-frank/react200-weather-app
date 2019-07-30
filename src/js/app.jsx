@@ -1,6 +1,8 @@
 import React from 'react';
 import CityInfo from './cityInfo.jsx'
 import SearchHistory from './searchHistory.jsx'
+import Search from './search.jsx'
+
 
 export default class App extends React.Component {
   render() {
@@ -10,6 +12,7 @@ export default class App extends React.Component {
             <h1 className="text-left font-weight-light">SDCS Weather Application</h1>
             <h5 className="text-left font-weight-light">Always know if you'll need an umbrella!</h5>
         </div>
+        <Search></Search>
         <div className="row">
           <div className="card-deck">
             <div className="col">

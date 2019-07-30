@@ -1,18 +1,21 @@
 import React from 'react';
 
-export default class SearchHistory extends React.Component {
-  render() {
+function SearchHistory (props) {
     return (
       <div className='container'>
         <div className="card">
-          <div className="card-header">
-              <p>Search History</p>
-          </div>
+          <div className="card-header">Search History</div>
           <div className="card-body">
-              <h1>Put a table here</h1>
+              <ul className="list-group list-group-flush">
+                  <li>test item</li>
+                  <li>test item</li>
+                  <li>test item</li>
+                  <li>test item</li>
+              </ul>
           </div>
         </div>
       </div>
     );
   }
-}
+
+  export default SearchHistory
