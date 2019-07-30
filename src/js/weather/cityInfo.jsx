@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherInfo from './weatherinfo.jsx';
+import WeatherInfo from './weatherInfo.jsx';
 
 export default class CityInfo extends React.Component {
   render() {

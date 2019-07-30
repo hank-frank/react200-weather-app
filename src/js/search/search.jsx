@@ -12,7 +12,13 @@ function Search(props) {
            <button>test button</button>
          </div>
         <div className="input-group">   
-            <input className="form-controll"></input>
+            <input 
+            className="form-controll"
+            id="search-input"
+            value=""
+            onChange=""
+            
+            ></input>
             <div className="input-group-append">
                 <button className='btn btn-outline-secondary'></button>
        </div>
