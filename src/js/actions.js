@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const UPDATES_SEARCH_VALUE = 'UPDATES_SEARCH_VALUE';
+export const GET_WEATHER_INFO = 'GET_WEATHER_INFO';
 
 export function updateSearchValue (value) {
     return {
@@ -9,31 +10,29 @@ export function updateSearchValue (value) {
     };
 }
 
-  
+export function searchWeather () {
+    return {
+        type: GET_WEATHER_INFO,
+        payload: axios.get(`/weather`)
+            .then(response => {
+            return { data: response.data };
+        })
+            .catch(err => {
+                return { data: {error: err.toString() } };
+            })
+    };
+}
+//leaving off here... figure out the axios call... 
 
-// import { UPDATES_SEARCH_VALUE, FETCHES_WEATHER_DATA } from '../actions';
-
-// const initialState = {
-//   searchValue: '',
-//   weatherData: {}
-// };
-
-// export default function searchReducer(state = initialState, action) {
-//   switch (action.type) {
-//     case UPDATES_SEARCH_VALUE: {
-//       return {
-//         ...state,
-//         searchValue: action.payload.value
-//       };
-//     }
-//     case `${FETCHES_WEATHER_DATA}_FULFILLED`: {
-//       return {
-//         searchValue: '',
-//         weatherData: action.payload.data
-//       };
-//     }
-//     default: {
-//       return state;
-//     }
+// export function fetchWeatherData(city) {
+//     return {
+//       type: FETCHES_WEATHER_DATA,
+//       payload: axios.get(`/weather/?city=${city}`)
+//         .then(response => {
+//           return { data: response.data };
+//         })
+//         .catch(err => {
+//           return { data: { error: err.toString() } };
+//         })
+//     };
 //   }
-// }

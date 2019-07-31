@@ -20,8 +20,12 @@ function Search(props) {
             onChange={ props.handleCaptureCity }
             
             ></input>
-            <div className="input-group-append">
-                <button className='btn btn-outline-secondary'></button>
+        <div className="input-group-append">
+            <button 
+            className='btn btn-outline-secondary'
+            id="search-button"
+            onClick={ props.handleSearch }
+            ></button>
        </div>
        </div>
     </div>
