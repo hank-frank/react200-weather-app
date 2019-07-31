@@ -1,18 +1,21 @@
+import { UPDATES_SEARCH_HISTORY } from '../actions';  
+
 const initialState = {
-    searchHistory: []
+  searchValue: '',
+  weatherData: {}
 };
 
-export default function historyReducer (state = initialState, action) {
-    const { type, payload } = action;
-
-
-    switch (type) {
-        //case of update description
-        
-
-        default: {
-            return state;
-        }
+export default function searchReducer(state = initialState, action) {
+  switch (action.type) {
+    case UPDATES_SEARCH_HISTORY: {
+      return {
+        ...state,
+        searchValue: action.payload.value
+      };
     }
-
-};
+   
+    default: {
+      return state;
+    }
+  }
+}

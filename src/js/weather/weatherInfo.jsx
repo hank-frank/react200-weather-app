@@ -1,14 +1,15 @@
 import React from 'react';
 
-export default class WeatherInfo extends React.Component {
-  render() {
+function WeatherInfo (props) {
+
     return (
      <div className="card">
           <div className="card-body">
-              <p>Info Title</p>
-              <p>info</p>
+              <p>{ props.name }</p>
+              <p>{ props.value }</p>
           </div>
         </div>
     );
   }
-}
+
+  export default WeatherInfo;

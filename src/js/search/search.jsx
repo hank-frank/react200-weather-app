@@ -25,7 +25,7 @@ function Search(props) {
             className='btn btn-outline-secondary'
             id="search-button"
             onClick={ props.handleSearch }
-            ></button>
+            >Search!</button>
        </div>
        </div>
     </div>

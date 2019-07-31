@@ -34,17 +34,22 @@ class App extends React.Component {
             <h5 className="text-left font-weight-light">Always know if you'll need an umbrella!</h5>
         </div>
         <Search
-        searchValue = { this.searchValue }
-        handleCaptureCity={ this.handleCaptureCity }
-        handleSearch = {this.handleSearch }
-        ></Search>
+          searchValue = { this.searchValue }
+          weatherData = { this.weatherData }
+          handleCaptureCity={ this.handleCaptureCity }
+          handleSearch = {this.handleSearch }
+          ></Search>
         <div className="row">
           <div className="card-deck">
             <div className="col">
-              <CityInfo></CityInfo>
+              <CityInfo
+                 weatherData = { this.props.weatherData }
+              ></CityInfo>
             </div>
             <div className="col">
-              <SearchHistory></SearchHistory>
+              <SearchHistory
+                  weatherData = { this.props.weatherData }
+              ></SearchHistory>
             </div>
           </div>
       </div>
@@ -56,7 +61,7 @@ class App extends React.Component {
 function mapStoreToProps(store) {
   return {
     searchValue: store.search.searchValue,
-   
+    weatherData: store.search.weatherData,
   };
 }
 
