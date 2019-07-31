@@ -1,27 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import CityInfo from './weather/cityInfo.jsx';
 import SearchHistory from './history/searchHistory.jsx';
 import Search from './search/search.jsx';
+//importing action creators
+import { updateSearchValue } from './actions';
 
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor (props){
     super(props);
-    this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.handleCaptureCity = this.handleCaptureCity.bind(this);
   }
 
-  handleSearchChange(event){
-    dispatchEvent(update)
-  }
-  // handleDescriptionInput(event) {
-  //   // dispatch was provided by connect()
-  //   const { dispatch } = this.props;
-  //   const { value } = event.target;
-  //   dispatch(updateExpenseDescription(value));
-  // }
-// onChange(e) {
-//     this.setState({ [e.target.name]: e.target.value })
-//   }
+  handleCaptureCity(event) {
+    const { dispatch } = this.props;
+   dispatch(updateSearchValue(event.target.value))
+  };
+
+
   render() {
     return (
       <div className='container'>
@@ -30,7 +28,8 @@ export default class App extends React.Component {
             <h5 className="text-left font-weight-light">Always know if you'll need an umbrella!</h5>
         </div>
         <Search
-        
+        searchValue = { this.searchValue }
+        handleCaptureCity={ this.handleCaptureCity }
         ></Search>
         <div className="row">
           <div className="card-deck">
@@ -46,3 +45,13 @@ export default class App extends React.Component {
     );
   }
 }
+
+function mapStoreToProps(store) {
+  return {
+    searchValue: store.search.searchValue,
+   
+  };
+}
+
+export default connect (mapStoreToProps)(App);
+// (mapStoreToProps)

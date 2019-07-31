@@ -3,6 +3,7 @@ import React from 'react';
 // const preloadedCities =
 //   ['San Diego', 'New York', 'Washington DC', 'London', 'Tokyo'];
 
+
 function Search(props) {
     return (
       <div className='mb-4'>
@@ -15,8 +16,8 @@ function Search(props) {
             <input 
             className="form-controll"
             id="search-input"
-            value=""
-            onChange=""
+            value={ props.searchValue } 
+            onChange={ props.handleCaptureCity }
             
             ></input>
             <div className="input-group-append">
