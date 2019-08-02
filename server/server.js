@@ -76,5 +76,3 @@ function getWeatherData(id) {
   
 
 module.exports = app;
-
-// .then(axios.get(`https://www.metaweather.com/api/location/2487889`)

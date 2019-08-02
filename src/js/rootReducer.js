@@ -3,7 +3,7 @@ import historyReducer from './history/historyReducer.js';
 import searchReducer from './search/searchReducer.js';
 
 const rootReducer = combineReducers({
-    hisotry: historyReducer,
+    history: historyReducer,
     search: searchReducer 
 });
 

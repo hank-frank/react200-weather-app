@@ -3,10 +3,10 @@ import React from 'react';
 function WeatherInfo (props) {
 
     return (
-     <div className="card">
+     <div className="card weathers">
           <div className="card-body">
-              <p>{ props.name }</p>
-              <p>{ props.value }</p>
+              <p className="weather-parameter-name">{ props.name }</p>
+              <p className="weather-parameter-value">{ props.value }</p>
           </div>
         </div>
     );

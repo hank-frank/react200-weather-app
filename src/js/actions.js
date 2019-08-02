@@ -4,6 +4,7 @@ export const UPDATES_SEARCH_VALUE = 'UPDATES_SEARCH_VALUE';
 export const GET_WEATHER_INFO = 'GET_WEATHER_INFO';
 export const UPDATES_SEARCH_HISTORY = 'UPDATES_SEARCH_HISTORY';
 
+
 export function updateSearchValue (value) {
     return {
         type: UPDATES_SEARCH_VALUE,

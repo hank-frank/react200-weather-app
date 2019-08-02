@@ -7,9 +7,18 @@ export default class CityInfo extends React.Component {
   }
 
   render() {
-    return (
+    let content;
+
+    if (this.props.weatherData.error) {
+      content =
+        <div className="alert alert-danger" role="alert">
+          Search didn't work playboy, try again...
+        </div>
+    }
+    else {
+      content =
     <div className='container'>
-        <div className="card">
+        <div className="card main-weather">
           <div className="card-header">
             <p>City Information</p>
           </div>
@@ -24,7 +33,7 @@ export default class CityInfo extends React.Component {
           <p className='coordinates'>Lat/Long:&nbsp;
               {this.props.weatherData.coordinates}</p>
           <div className="card-deck">
-            <div className="row">
+            <div className="row justify-content-center">
               <WeatherInfo
                 name="Temperature"
                 value = {this.props.weatherData.temperature}
@@ -38,7 +47,7 @@ export default class CityInfo extends React.Component {
                 value = {this.props.weatherData.humidity}
                 ></WeatherInfo>
             </div>
-            <div className="row">
+            <div className="row justify-content-center">
               <WeatherInfo
                 name="Lowest Temp (F)"
                 value = {this.props.weatherData.lowest_temp}
@@ -56,6 +65,7 @@ export default class CityInfo extends React.Component {
           </div>
         </div>
       </div>
-    );
+       }
+       return content;
   }
 }

@@ -1,21 +1,32 @@
 import React from 'react';
 
-// const preloadedCities =
-//   ['San Diego', 'New York', 'Washington DC', 'London', 'Tokyo'];
+const savedButtonCities =
+  ['San Diego', 'Escondito', 'Portland', 'Detroit', 'Las Vegas'];
 
 
 function Search(props) {
     return (
-      <div className='mb-4'>
-        <div className="button-group" role="group">
-           <button>test button</button>
-           <button>test button</button>
-           <button>test button</button>
-         </div>
-        <div className="input-group">   
+      <div className='search mb-4 justify-content-center'>
+        <div className='btn-group'role='group'>
+        {
+          savedButtonCities.map(cityName =>
+            <button
+              type='button'
+              className='btn btn-primary'
+              value={ cityName }
+              onClick={ props.handlePreload }
+              key={ cityName }
+            >
+            { cityName }
+            </button>
+          )
+        }
+      </div>
+        <div className="input-group search-input">   
             <input 
-            className="form-controll"
+            className="form-controll input-large"
             id="search-input"
+            placeholder="City"
             value={ props.searchValue } 
             onChange={ props.handleCaptureCity }
             
