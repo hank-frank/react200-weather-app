@@ -3,7 +3,6 @@ import React from 'react';
 const savedButtonCities =
   ['San Diego', 'Escondito', 'Portland', 'Detroit', 'Las Vegas'];
 
-
 function Search(props) {
     return (
       <div className='search mb-4 justify-content-center'>
@@ -19,8 +18,7 @@ function Search(props) {
             >
             { cityName }
             </button>
-          )
-        }
+          )}
       </div>
         <div className="input-group search-input">   
             <input 
@@ -28,15 +26,12 @@ function Search(props) {
             id="search-input"
             placeholder="City"
             value={ props.searchValue } 
-            onChange={ props.handleCaptureCity }
-            
-            ></input>
+            onChange={ props.handleCaptureCity } />
         <div className="input-group-append">
             <button 
             className='btn btn-outline-secondary'
             id="search-button"
-            onClick={ props.handleSearch }
-            >Search!</button>
+            onClick={ props.handleSearch }>Search!</button>
        </div>
        </div>
     </div>

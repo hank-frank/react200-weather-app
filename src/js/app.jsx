@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import CityInfo from './weather/cityInfo.jsx';
 import SearchHistory from './history/searchHistory.jsx';
 import Search from './search/search.jsx';
-//importing action creators
+
 import { updateSearchValue, searchWeather, updateSearchHistory } from './actions';
 
-//state is accessable as props cause thats how the mapstoretoprops funciton/connect is passing it in. 
 class App extends React.Component {
   constructor (props){
     super(props);
@@ -34,7 +33,6 @@ class App extends React.Component {
       .catch(err => console.log(err));
   }
 
-
   render() {
     return (
       <div className='container'>
@@ -44,8 +42,6 @@ class App extends React.Component {
         </div>
         <div className="col-xs-4 text-center">
           <div className="row justify-content-center"> 
-           
-
         <Search
           searchValue = { this.searchValue }
           handleCaptureCity={ this.handleCaptureCity }
@@ -82,4 +78,3 @@ function mapStoreToProps(store) {
 }
 
 export default connect (mapStoreToProps)(App);
-// (mapStoreToProps)

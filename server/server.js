@@ -19,7 +19,6 @@ const woeids = {
   app.get('/weather', (req, res, next) => {
     const city = req.query.city;
   
-    // check for preloaded city
     const cityModified = city.toLowerCase().replace(/\s/g, '');
     if (woeids[cityModified]) {
       const id = woeids[cityModified];
@@ -74,5 +73,4 @@ function getWeatherData(id) {
     return (Math.trunc(number * 100) / 100);
   }
   
-
 module.exports = app;
